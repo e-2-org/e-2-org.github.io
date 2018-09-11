@@ -1,0 +1,312 @@
+/**
+ * e-2.org stylesheet
+ */
+
+/* borders and margins */
+html, body, div {
+  margin:0;
+  padding:0;
+  border:0;
+}
+img {
+  border:0;
+}
+a {
+  text-decoration:none;
+	border:0;
+}
+/* fonts */
+body {
+  font:76%/1.2em 'lucida sans unicode','lucida sans',verdana,arial,helvetica,sans-serif;
+}
+h1 {
+  margin:0;
+  font:bold 1.2em/1.5em verdana,arial,helvetica,sans-serif;
+}
+h2 {
+  font:bold 1.1em/1.4em verdana,arial,helvetica,sans-serif;
+}
+h3, h4, h5, h6 {
+  font:bold 1em/1.3em verdana,arial,helvetica,sans-serif;
+}
+/* layout */
+/* column wrapper */
+div.right-column-content, div.left-column-content {
+  /*margin:0 30px 0 0;*/
+  position:relative;
+  /*clear:both;*/
+}
+
+/* right column */
+div.rightcol {
+  float:left;
+	text-align:left;
+	overflow:hidden;
+	width:40%;
+}
+div.rightcol h1.title, div.rightcol h2.subtitle {
+	padding-left:40px;
+	margin-bottom:0.5em;
+}
+
+/* left column */
+div.leftcol {
+  float:left;
+	text-align:right;
+	overflow:hidden;
+	width:50%;
+}
+div.leftcol h1.title, div.leftcol h2.subtitle {
+	padding-right:40px;
+	margin-bottom:0.5em;
+}
+
+/* column content */
+p.right {
+  text-align:right;
+}
+.content {
+  padding:20px 0 0 0;
+}
+.content p {
+  padding:0 40px;
+}
+.left-column-content, .right-column-content {
+}
+.left-column-content {
+  margin-left:20%;
+}
+.right-column-content {
+  margin-right:20%;
+}
+/* footer */
+#footer {
+  position:fixed;
+	left:0;
+	bottom:0;
+	width:100%;
+	height:66px;
+}
+#footer-content {
+  position:relative;
+  width:100%;
+  height:66px;
+}
+#footer-ghost {
+  clear:both;
+  width:100%;
+  height:66px;
+}
+/* e-2 logo */
+#logo {
+  position:absolute;
+  left:50%;
+  margin-left:-94px;
+  bottom:10px;
+  z-index:10;
+}
+/* new contact|about (#c #a) links */
+#c, #a {
+  width:50%;
+  position:absolute;
+  top:20px;
+  z-index:9;
+}
+#c {
+  left:0;
+  text-align:right;
+}
+#a {
+  left:50%;
+  text-align:left;
+}	
+#c ul, #a ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+#c ul {
+  margin-right:124px;
+}
+#a ul {
+  margin-left:96px;
+}
+#c li, #a li {
+  padding:0.5em;
+}
+#c li a, #a li a {
+  display:block;
+  text-transform:uppercase;
+  font:bold 0.9em 'lucida sans unicode','lucida sans',verdana,arial,helvetica,sans-serif;
+  border:0;
+}
+#c li a {
+	padding-right:14px;
+}
+#a li a {
+	padding-left:14px;
+}
+/* contact form */
+form {
+	margin-right:40px;
+}
+p.form {
+  width:100%;
+	position:relative;
+	clear:both;
+	padding:2px 0;
+}
+p.indent {
+  margin-left:43%;
+}
+p.form label {
+  width:40%;
+	float:left;
+	text-align:right;
+	padding-right:3%;
+}
+p.form input, p.form textarea {
+  width:50%;
+	background-color:#eee;
+	border:1px solid #ccc;
+	padding:0;
+	margin:0;
+	float:left;
+  font:small/1.5em verdana,arial,helvetica,sans-serif;
+}
+p.error {
+  margin-left:43%;
+  color:#f33;
+	text-align:left;
+}
+p.imgver img {
+	float:left;
+	margin-left:43%;
+}
+p.imgver label {
+}
+p.imgver input {
+  width:148px;
+}
+
+/* commissions and projects lists */
+ul.commissions, ul.projects {
+  position:relative;
+  list-style:none;
+	border:0;
+	margin:0;
+}
+ul.commissions {
+	padding:0 0 0 40px;
+}
+ul.projects {
+	padding:0 40px 0 0;
+	float:right;
+}
+/**
+ * CSS image replacement by Seamus Leahy
+ * http://www.moronicbajebus.com/playground/cssplay/image-replacement/
+ */
+ 
+/* global settings */
+ul.commissions li a, ul.projects li a {
+  display:block;
+	border:0;
+	margin:5px 0;
+	width:275px;
+  /* height of all images */ 
+  padding-top:20px; 
+  /*The image*/ 
+  background-color:transparent;
+  background-repeat:no-repeat;
+  /*Hide the text*/ 
+  overflow:hidden; 
+  /* WIN IE5 hack */ 
+  height:0px !important; /* for most browsers */
+  height /**/:20px; /* for IE5.5's bad box model */
+  /* IE5/Mac: \*//*/
+	text-indent: -100em;
+  /*  */
+}
+/* commissions menu */
+ul.commissions li a {
+  background-position:left top; 
+}
+/* commissions menu items */
+ul.commissions li a.minus20 {
+  background-image:url(../images/nav/minus20.gif);
+}
+ul.commissions li a.perhect {
+  background-image:url(../images/nav/perhect.gif);
+}
+ul.commissions li a.adelaide {
+  background-image:url(../images/nav/adelaide.gif);
+}
+ul.commissions li a.error404 {
+  background-image:url(../images/nav/error404.gif);
+}
+ul.commissions li a.nowhere {
+  background-image:url(../images/nav/nowhere.gif);
+}
+ul.commissions li a.tome {
+  background-image:url(../images/nav/tome.gif);
+}
+ul.commissions li a.pigstails {
+  background-image:url(../images/nav/pigstails.gif);
+}
+ul.commissions li a.ahouse {
+  background-image:url(../images/nav/ahouse.gif);
+}
+ul.commissions li a.birdisland {
+  background-image:url(../images/nav/birdisland.gif);
+}
+ul.commissions li a.cruisin {
+  background-image:url(../images/nav/cruisin.gif);
+}
+ul.commissions li a.sevenacts {
+  background-image:url(../images/nav/sevenacts.gif);
+}
+/* projects menu */
+ul.commissions li a {
+  background-position:right top; 
+}
+/* projects menu items */
+ul.projects li a.ra {
+  background-image:url(../images/nav/ra.gif);
+}
+ul.projects li a.wkw {
+  background-image:url(../images/nav/wkw.gif);
+}
+ul.projects li a.ira {
+  background-image:url(../images/nav/ira.gif);
+}
+ul.projects li a.ffm {
+  background-image:url(../images/nav/ffm.gif);
+}
+ul.projects li a.soa {
+  background-image:url(../images/nav/soa.gif);
+}
+ul.projects li a.eyesdown {
+  background-image:url(../images/nav/eyesdown.gif);
+}
+ul.projects li a.contact {
+  background-image:url(../images/nav/contact.gif);
+}
+ul.projects li a.layout {
+  background-image:url(../images/nav/layout.gif);
+}
+ul.projects li a.sb {
+  background-image:url(../images/nav/sb.gif);
+}
+/* image swapping */
+ul.commissions li a:hover {
+  background-position:left -50px;
+}
+ul.projects li a:hover {
+  background-position:right -50px;
+}
+/* image caption */
+p.caption {
+  color:#999;
+	padding:10px;
+}

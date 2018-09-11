@@ -1,0 +1,5 @@
+RedirectMatch 301 /projman/(.*) http://p-2.biz/projman/$1
+RedirectMatch 301 /perhect/(.*) http://wordperhect.net/$1
+RedirectMatch 301 /contact/(.*) http://contact.e-2.org/$1
+RedirectMatch 301 /c-ship/(.*) http://cship.e-2.org/$1
+RedirectMatch 301 /minus20/(.*) http://minus20.e-2.org/$1

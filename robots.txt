@@ -1,0 +1,5 @@
+# /robots.txt file for http://e-2.org/
+# mail tech@e-2.org for constructive criticism
+User-agent: *
+Disallow: /ra
+Disallow: /templates
