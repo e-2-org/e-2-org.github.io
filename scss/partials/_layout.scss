@@ -1,0 +1,65 @@
+/* layout */
+
+/* column wrapper */
+
+div.right-column-content,
+div.left-column-content {
+    /*margin:0 30px 0 0;*/
+    position: relative;
+    /*clear:both;*/
+}
+
+/* right column */
+
+div.rightcol {
+    float: left;
+    text-align: left;
+    overflow: hidden;
+    width: 40%;
+}
+
+div.rightcol h1.title,
+div.rightcol h2.subtitle {
+    padding-left: 40px;
+    margin-bottom: 0.5em;
+}
+
+/* left column */
+
+div.leftcol {
+    float: left;
+    text-align: right;
+    overflow: hidden;
+    width: 50%;
+}
+
+div.leftcol h1.title,
+div.leftcol h2.subtitle {
+    padding-right: 40px;
+    margin-bottom: 0.5em;
+}
+
+/* column content */
+
+p.right {
+    text-align: right;
+}
+
+.content {
+    padding: 20px 0 0 0;
+}
+
+.content p {
+    padding: 0 40px;
+}
+
+.left-column-content,
+.right-column-content {}
+
+.left-column-content {
+    margin-left: 20%;
+}
+
+.right-column-content {
+    margin-right: 20%;
+}

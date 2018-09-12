@@ -1,0 +1,22 @@
+{
+  "name": "e-2",
+  "version": "0.0.1",
+  "description": "e-2.org website",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-2/e-2.git"
+  },
+  "author": "Peter Edwards <peter.edwards@p-2.biz>",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/p-2/e-2/issues"
+  },
+  "homepage": "https://github.com/p-2/e-2#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-livereload": "*",
+    "gulp-sass": "*",
+    "gulp-watch": "*"
+  }
+}

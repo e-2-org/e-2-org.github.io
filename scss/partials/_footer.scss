@@ -1,0 +1,87 @@
+/* footer */
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 66px;
+}
+
+#footer-content {
+    position: relative;
+    width: 100%;
+    height: 66px;
+}
+
+#footer-ghost {
+    clear: both;
+    width: 100%;
+    height: 66px;
+}
+
+/* e-2 logo */
+
+#logo {
+    position: absolute;
+    left: 50%;
+    margin-left: -94px;
+    bottom: 10px;
+    z-index: 10;
+}
+
+/* new contact|about (#c #a) links */
+
+#c,
+#a {
+    width: 50%;
+    position: absolute;
+    top: 20px;
+    z-index: 9;
+}
+
+#c {
+    left: 0;
+    text-align: right;
+}
+
+#a {
+    left: 50%;
+    text-align: left;
+}
+
+#c ul,
+#a ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#c ul {
+    margin-right: 124px;
+}
+
+#a ul {
+    margin-left: 96px;
+}
+
+#c li,
+#a li {
+    padding: 0.5em;
+}
+
+#c li a,
+#a li a {
+    display: block;
+    text-transform: uppercase;
+    font: bold 0.9em 'lucida sans unicode', 'lucida sans', verdana, arial, helvetica, sans-serif;
+    border: 0;
+}
+
+#c li a {
+    padding-right: 14px;
+}
+
+#a li a {
+    padding-left: 14px;
+}
