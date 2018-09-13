@@ -9,6 +9,8 @@ ul.projects {
 }
 
 ul.commissions, ul.projects {
+	list-style:none;
+	margin:0;
 	li {
 		padding:.35em 0;
 	}
@@ -22,19 +24,33 @@ ul.commissions, ul.projects {
 		}
 	}
 }
-ul.commissions {
-	padding: 0 0 0 1.5em;
-	li {
-		border-left:5px solid transparent;
+body.projects {
+	
+	ul.commissions {
+		padding: 0 0 0 1em;
+		a span.project {
+			color:$white;
+		}
 	}
-	a span.name {
-		color:$yellow;
+	ul.projects {
+		padding: 0 1em 0 0;
+		a span.project {
+			color:$darkergrey;
+		}
 	}
 }
-ul.projects {
-    padding: 0 1.5em 0 0;
-    float: right;
-	a span.name {
-		color:$purple;
+body.commissions {
+	ul.commissions {
+		padding: 0 0 0 1em;
+		a span.project {
+			color:$darkergrey;
+		}
 	}
+	ul.projects {
+		padding: 0 1em 0 0;
+		a span.project {
+			color:$white;
+		}
+	}
+
 }

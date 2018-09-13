@@ -26,17 +26,23 @@ body {
     background: linear-gradient(to right, $grey,$grey 50%,$white 50%,$white);
     /* right column (on white) */
     div.rightcol {
-        color: $grey;
+        color: $darkergrey;
     }
     div.rightcol a {
-        color: $darkgrey;
+        color: $purple;
     }
     div.rightcol a:hover {
-        color: $purple;
+        color: $darkergrey;
     }
     div.rightcol h1.title {
         color: $purple;
         border-left: 1.5em solid $purple;
+    }
+    div.leftcol h1.title a {
+        color: $purple;
+    }
+    div.leftcol h1.title a:hover {
+        color: $grey;
     }
     div.rightcol h2.subtitle {
         color: $grey;
@@ -95,10 +101,10 @@ body.projects {
     background: linear-gradient(to left, $grey,$grey 50%,$white 50%,$white);
     /* right column (on grey) */
     div.rightcol {
-        color: #ddd;
+        color: $lightgrey;
     }
     div.rightcol a {
-        color: #eee;
+        color: $yellow;
     }
     div.rightcol a:hover {
         color: $white;
@@ -107,18 +113,24 @@ body.projects {
         color: $yellow;
         border-left: 1.5em solid $yellow;
     }
+    div.leftcol h1.title a {
+        color: $yellow;
+    }
+    div.leftcol h1.title a:hover {
+        color: $white;
+    }
     div.rightcol h2.subtitle {
         color: $white;
     }
     /* left column (on white) */
     div.leftcol {
-        color: #666;
+        color: $darkergrey;
     }
     div.leftcol a {
-        color: #555;
+        color: $purple;
     }
     div.leftcol a:hover {
-        color: #444;
+        color: $darkergrey;
     }
     div.leftcol h1.title {
         border-right: 1.5em solid $purple;
@@ -128,10 +140,10 @@ body.projects {
         color: $purple;
     }
     div.leftcol h1.title a:hover {
-        color: #000;
+        color: $darkgrey;
     }
     div.leftcol h2.subtitle {
-        color: #666;
+        color: $darkgrey;
     }
     /* contact|about */
     #a li a {

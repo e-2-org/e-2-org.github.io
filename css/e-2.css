@@ -369,6 +369,10 @@ th {
   padding: 0; }
 
 /* layout */
+/* main column wrapper */
+.column-content {
+  margin-top: 2em; }
+
 /* column wrapper */
 div.right-column-content,
 div.left-column-content {
@@ -401,17 +405,19 @@ div.leftcol h2.subtitle {
   margin-bottom: 0.5em; }
 
 /* column content */
-p.right {
-  text-align: right; }
-
 .content {
-  padding: 1em 0 0 0; }
+  padding: 1em; }
 
 .left-column-content {
   margin-left: 10%; }
 
 .right-column-content {
   margin-right: 10%; }
+
+ul.projects {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
 
 :root {
   font-size: 0.75em;
@@ -459,26 +465,35 @@ ul.projects {
   border: 0;
   margin: 0; }
 
-ul.commissions li, ul.projects li {
-  padding: .35em 0; }
+ul.commissions, ul.projects {
+  list-style: none;
+  margin: 0; }
+  ul.commissions li, ul.projects li {
+    padding: .35em 0; }
+  ul.commissions a span.name, ul.commissions a span.project, ul.projects a span.name, ul.projects a span.project {
+    display: inline-block;
+    padding: 0 .35em;
+    white-space: nowrap; }
 
-ul.commissions a span.name, ul.commissions a span.project, ul.projects a span.name, ul.projects a span.project {
-  display: inline-block;
-  padding: 0 .35em;
-  white-space: nowrap; }
+body.projects ul.commissions {
+  padding: 0 0 0 1em; }
+  body.projects ul.commissions a span.project {
+    color: #fff; }
 
-ul.commissions {
-  padding: 0 0 0 1.5em; }
-  ul.commissions li {
-    border-left: 5px solid transparent; }
-  ul.commissions a span.name {
-    color: #ff0; }
+body.projects ul.projects {
+  padding: 0 1em 0 0; }
+  body.projects ul.projects a span.project {
+    color: #666; }
 
-ul.projects {
-  padding: 0 1.5em 0 0;
-  float: right; }
-  ul.projects a span.name {
-    color: #c3c; }
+body.commissions ul.commissions {
+  padding: 0 0 0 1em; }
+  body.commissions ul.commissions a span.project {
+    color: #666; }
+
+body.commissions ul.projects {
+  padding: 0 1em 0 0; }
+  body.commissions ul.projects a span.project {
+    color: #fff; }
 
 /* image caption */
 p.caption {
@@ -511,14 +526,18 @@ body {
   /* left column (on grey) */
   /* contact|about */ }
   body div.rightcol {
-    color: #999; }
+    color: #666; }
   body div.rightcol a {
-    color: #222; }
-  body div.rightcol a:hover {
     color: #c3c; }
+  body div.rightcol a:hover {
+    color: #666; }
   body div.rightcol h1.title {
     color: #c3c;
     border-left: 1.5em solid #c3c; }
+  body div.leftcol h1.title a {
+    color: #c3c; }
+  body div.leftcol h1.title a:hover {
+    color: #999; }
   body div.rightcol h2.subtitle {
     color: #999; }
   body div.leftcol {
@@ -562,29 +581,33 @@ body.projects {
   body.projects div.rightcol {
     color: #ddd; }
   body.projects div.rightcol a {
-    color: #eee; }
+    color: #ff0; }
   body.projects div.rightcol a:hover {
     color: #fff; }
   body.projects div.rightcol h1.title {
     color: #ff0;
     border-left: 1.5em solid #ff0; }
+  body.projects div.leftcol h1.title a {
+    color: #ff0; }
+  body.projects div.leftcol h1.title a:hover {
+    color: #fff; }
   body.projects div.rightcol h2.subtitle {
     color: #fff; }
   body.projects div.leftcol {
     color: #666; }
   body.projects div.leftcol a {
-    color: #555; }
+    color: #c3c; }
   body.projects div.leftcol a:hover {
-    color: #444; }
+    color: #666; }
   body.projects div.leftcol h1.title {
     border-right: 1.5em solid #c3c;
     color: #c3c; }
   body.projects div.leftcol h1.title a {
     color: #c3c; }
   body.projects div.leftcol h1.title a:hover {
-    color: #000; }
+    color: #222; }
   body.projects div.leftcol h2.subtitle {
-    color: #666; }
+    color: #222; }
   body.projects #a li a {
     color: #ddd; }
     body.projects #a li a:after {

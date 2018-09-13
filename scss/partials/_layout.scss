@@ -1,5 +1,9 @@
 /* layout */
 
+/* main column wrapper */
+.column-content {
+    margin-top: 2em;
+}
 /* column wrapper */
 
 div.right-column-content,
@@ -41,12 +45,8 @@ div.leftcol h2.subtitle {
 
 /* column content */
 
-p.right {
-    text-align: right;
-}
-
 .content {
-    padding: 1em 0 0 0;
+    padding: 1em;
 }
 
 
@@ -59,4 +59,10 @@ p.right {
 
 .right-column-content {
     margin-right: 10%;
+}
+
+ul.projects {
+    list-style:none;
+    padding:0;
+    margin:0;
 }
