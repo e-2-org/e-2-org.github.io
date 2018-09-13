@@ -5,152 +5,36 @@ ul.projects {
     position: relative;
     list-style: none;
     border: 0;
-    margin: 0;
+	margin: 0;
 }
 
+ul.commissions, ul.projects {
+	li {
+		padding:.35em 0;
+	}
+	a {
+		span {
+			&.name, &.project {
+				display:inline-block;
+				padding:0 .35em;
+				white-space: nowrap;
+			}
+		}
+	}
+}
 ul.commissions {
-    padding: 0 0 0 40px;
+	padding: 0 0 0 1.5em;
+	li {
+		border-left:5px solid transparent;
+	}
+	a span.name {
+		color:$yellow;
+	}
 }
-
 ul.projects {
-    padding: 0 40px 0 0;
+    padding: 0 1.5em 0 0;
     float: right;
-}
-
-/**
-   * CSS image replacement by Seamus Leahy
-   * http://www.moronicbajebus.com/playground/cssplay/image-replacement/
-   */
-
-/* global settings */
-
-ul.commissions li a,
-ul.projects li a {
-    display: block;
-    border: 0;
-    margin: 5px 0;
-    width: 275px;
-    /* height of all images */
-    padding-top: 20px;
-    /*The image*/
-    background-color: transparent;
-    background-repeat: no-repeat;
-    /*Hide the text*/
-    overflow: hidden;
-    /* WIN IE5 hack */
-    height: 0px !important;
-    /* for most browsers */
-    height/**/
-    : 20px;
-    /* for IE5.5's bad box model */
-    /* IE5/Mac: \*/
-    /*/
-	  text-indent: -100em;
-	/*  */
-}
-
-/* commissions menu */
-
-ul.commissions li a {
-    background-position: left top;
-}
-
-/* commissions menu items */
-
-ul.commissions li a.minus20 {
-    background-image: url(../images/nav/minus20.gif);
-}
-
-ul.commissions li a.perhect {
-    background-image: url(../images/nav/perhect.gif);
-}
-
-ul.commissions li a.adelaide {
-    background-image: url(../images/nav/adelaide.gif);
-}
-
-ul.commissions li a.error404 {
-    background-image: url(../images/nav/error404.gif);
-}
-
-ul.commissions li a.nowhere {
-    background-image: url(../images/nav/nowhere.gif);
-}
-
-ul.commissions li a.tome {
-    background-image: url(../images/nav/tome.gif);
-}
-
-ul.commissions li a.pigstails {
-    background-image: url(../images/nav/pigstails.gif);
-}
-
-ul.commissions li a.ahouse {
-    background-image: url(../images/nav/ahouse.gif);
-}
-
-ul.commissions li a.birdisland {
-    background-image: url(../images/nav/birdisland.gif);
-}
-
-ul.commissions li a.cruisin {
-    background-image: url(../images/nav/cruisin.gif);
-}
-
-ul.commissions li a.sevenacts {
-    background-image: url(../images/nav/sevenacts.gif);
-}
-
-/* projects menu */
-
-ul.commissions li a {
-    background-position: right top;
-}
-
-/* projects menu items */
-
-ul.projects li a.ra {
-    background-image: url(../images/nav/ra.gif);
-}
-
-ul.projects li a.wkw {
-    background-image: url(../images/nav/wkw.gif);
-}
-
-ul.projects li a.ira {
-    background-image: url(../images/nav/ira.gif);
-}
-
-ul.projects li a.ffm {
-    background-image: url(../images/nav/ffm.gif);
-}
-
-ul.projects li a.soa {
-    background-image: url(../images/nav/soa.gif);
-}
-
-ul.projects li a.eyesdown {
-    background-image: url(../images/nav/eyesdown.gif);
-}
-
-ul.projects li a.contact {
-    background-image: url(../images/nav/contact.gif);
-}
-
-ul.projects li a.layout {
-    background-image: url(../images/nav/layout.gif);
-}
-
-ul.projects li a.sb {
-    background-image: url(../images/nav/sb.gif);
-}
-
-/* image swapping */
-
-ul.commissions li a:hover {
-    background-position: left -50px;
-}
-
-ul.projects li a:hover {
-    background-position: right -50px;
+	a span.name {
+		color:$purple;
+	}
 }

@@ -13,64 +13,6 @@
   <div class="leftcol">
     <div class="content">
   	  <div class="left-column-content">
-<?php
-/**
- * process posted content
- */
-$errors = array();
-$values = array("fullname" => '', "email" => '', "message" => '');
-if (isset($_POST["submit"])) {
-    if (!isset($_POST["fullname"]) || trim($_POST["fullname"]) == '') {
-        $errors["fullname"] = 'Please supply your name';
-    } else {
-        $values["fullname"] = htmlentities(trim($_POST["fullname"]));
-    }
-    if (!isset($_POST["email"]) || trim($_POST["email"]) == '') {
-        $errors["email"] = 'Please supply your email address';
-    } elseif (!validateEmailFormat($_POST["email"])) {
-        $errors["email"] = 'The email address you supplied is invalid';
-        $values["email"] = htmlentities(trim($_POST["email"]));
-    } else {
-        $values["email"] = htmlentities(trim($_POST["email"]));
-    }
-		$values["message"] = htmlentities(trim($_POST["message"]));
-		//test for injection attacks
-		if (preg_match('/Content-Type:(\s*)multipart\/mixed/i', $values["message"])) {
-		    print('<p>Your attempt at stream injection has been logged. You will no longer be able to access this site, and your IP address will be reported.</p></div></div></div></div></body></html>');
-				if ($al = fopen($attack_log, 'ab')) {
-				    $msg = date("U") . "|" . $_SERVER['REMOTE_ADDR'] . "|" . $_SERVER["HTTP_USER_AGENT"] . "\n";
-						fwrite($al, $msg);
-						fclose($al);
-				}
-				if ($fh = fopen('.htaccess', 'ab')) {
-				    $deny = '# ' . date("D M j G:i:s T Y") . "\n";
-            $deny .= 'Deny from ' . $_SERVER['REMOTE_ADDR'] . "\n";
-				    fwrite($fh, $deny);
-						fclose($fh);
-				}
-				exit;
-    }
-		if (!isset($_POST["verificationCode"]) || trim($_POST["verificationCode"]) == '' || !$imgVer->verifyCode($_POST["verificationCode"])) {
-		    $errors["verificationCode"] = 'The code you entered was incorrect';
-		}
-    $imgVer->clear();
-		$values["verificationCode"] = '';
-    if (count($errors)) {
-	      printf('<p>Sorry, the form you just submitted contains errors. Please correct these and try again, or email <a href="mailto:%s">%s</a>.</p>', $admin_email, $admin_email);
-				print(contactform($values, $errors, $imgVer));
-    } else {
-        $email_message = sprintf("The e-2 contact form has been submitted - message follows:\n\n=====================================\n\nName: %s\nEmail: %s\nMessage: %s\n", $values["fullname"], $values["email"], $values["message"]);
-        $email_subject = "[e-2 contact form]";
-        if (send_email($admin_email, $email_subject, $email_message, $admin_email)) {
-		    print('<p>Thank you for completing the contact form on the e-2 website.</p>');
-		} else {
-		    print("Sorry, there was a problem sending your message");
-		}
-    }
-} else {
-    print(contactform($values, $errors, $imgVer));
-}
-?>
   		</div>
   	</div>
   </div>
@@ -80,7 +22,7 @@ if (isset($_POST["submit"])) {
   	  <div class="right-column-content">
  	      <p>e-2</p>
         <p>18 Ashwin Street<br />Hackney<br />London E8 3DL<br />United Kingdom</p>
-        <p>email: <a href="mailto:mail@e-2.org">mail@e-2.org</a><br />tel:+44 7760 483 103</p>
+        <p>email: <a href="mailto:mail@e-2.org">mail@e-2.org</a></p>
 			</div>
   	</div>
   </div>

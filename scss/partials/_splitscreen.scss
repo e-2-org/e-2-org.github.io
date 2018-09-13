@@ -1,0 +1,159 @@
+/**
+ * e-2.org colours
+ */
+
+ /* common patterns */
+#a li a,
+#c li a {
+    text-transform: uppercase;
+    position: relative;
+    display: block;
+    padding: .25em 1.25em;
+    &:after {
+        content:'';
+        display:block;
+        width:.4em;
+        height:.4em;
+        position:absolute;
+        top:.25em;
+    }
+}
+
+
+/* default (grey|white) */
+
+body {
+    background: linear-gradient(to right, $grey,$grey 50%,$white 50%,$white);
+    /* right column (on white) */
+    div.rightcol {
+        color: $grey;
+    }
+    div.rightcol a {
+        color: $darkgrey;
+    }
+    div.rightcol a:hover {
+        color: $purple;
+    }
+    div.rightcol h1.title {
+        color: $purple;
+        border-left: 1.5em solid $purple;
+    }
+    div.rightcol h2.subtitle {
+        color: $grey;
+    }
+    /* left column (on grey) */
+    div.leftcol {
+        color: $lightgrey;
+    }
+    div.leftcol a {
+        color: $white;
+    }
+    div.leftcol a:hover {
+        color: $yellow;
+    }
+    div.leftcol h1.title {
+        color: $yellow;
+        border-right: 1.5em solid $yellow;
+    }
+    div.leftcol h1.title a {
+        color: $yellow;
+    }
+    div.leftcol h1.title a:hover {
+        color: $white;
+    }
+    div.leftcol h2.subtitle {
+        color: $white;
+    }
+    /* contact|about */
+    #c li a {
+        color: $lightgrey;
+        &:after {
+            border:1px solid $yellow;
+            background: $white;
+            right:0;
+        }
+        &:hover:after {
+            background:$grey;
+        }
+    }
+    #a li a {
+        color: $grey;
+        &:after {
+            border:1px solid $purple;
+            background: $grey;
+            left:0;
+        }
+        &:hover:after {
+            background:$white;
+        }
+    }
+}
+
+/* projects (white|grey) */
+
+body.projects {
+    background: linear-gradient(to left, $grey,$grey 50%,$white 50%,$white);
+    /* right column (on grey) */
+    div.rightcol {
+        color: #ddd;
+    }
+    div.rightcol a {
+        color: #eee;
+    }
+    div.rightcol a:hover {
+        color: $white;
+    }
+    div.rightcol h1.title {
+        color: $yellow;
+        border-left: 1.5em solid $yellow;
+    }
+    div.rightcol h2.subtitle {
+        color: $white;
+    }
+    /* left column (on white) */
+    div.leftcol {
+        color: #666;
+    }
+    div.leftcol a {
+        color: #555;
+    }
+    div.leftcol a:hover {
+        color: #444;
+    }
+    div.leftcol h1.title {
+        border-right: 1.5em solid $purple;
+        color: $purple;
+    }
+    div.leftcol h1.title a {
+        color: $purple;
+    }
+    div.leftcol h1.title a:hover {
+        color: #000;
+    }
+    div.leftcol h2.subtitle {
+        color: #666;
+    }
+    /* contact|about */
+    #a li a {
+        color: $lightgrey;
+        &:after {
+            border:1px solid $yellow;
+            background: $grey;
+            left:0;
+        }
+        &:hover:after {
+            background:$white;
+        }
+    }
+    #c li a {
+        color: $grey;
+        &:after {
+            border:1px solid $purple;
+            background: $white;
+            right: 0;
+        }
+        &:hover:after {
+            background: $grey;
+        }
+    }
+}

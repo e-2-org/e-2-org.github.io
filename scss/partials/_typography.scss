@@ -1,21 +1,45 @@
+:root {
+    font-size: 0.75em;
+    line-height: 1.2;
+}
+
+@media (min-width: $break-md) {
+    :root {
+        font-size: 0.875em;
+    }
+}
+
+@media (min-width: $break-lg) {
+    :root {
+        font-size: 1em;
+    }
+}
+
 body {
-    font: 76%/1.2em 'lucida sans unicode', 'lucida sans', verdana, arial, helvetica, sans-serif;
+    font-family:'lucida sans unicode', 'lucida sans', verdana, arial, helvetica, sans-serif;
+
 }
 
 h1 {
     margin: 0;
-    font: bold 1.2em/1.5em verdana, arial, helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: verdana, arial, helvetica, sans-serif;
 }
 
 h2 {
-    font: bold 1.1em/1.4em verdana, arial, helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: verdana, arial, helvetica, sans-serif;
 }
 
 h3,
 h4,
 h5,
 h6 {
-    font: bold 1em/1.3em verdana, arial, helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: verdana, arial, helvetica, sans-serif;
 }
 
 a {

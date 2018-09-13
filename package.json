@@ -14,9 +14,12 @@
   },
   "homepage": "https://github.com/p-2/e-2#readme",
   "devDependencies": {
+    "browser-sync": "^2.24.7",
     "gulp": "^3.9.1",
-    "gulp-livereload": "*",
-    "gulp-sass": "*",
-    "gulp-watch": "*"
+    "gulp-cleancss": "^0.2.2",
+    "gulp-livereload": "^4.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-watch": "^5.0.1",
+    "gulp-webserver": "^0.9.1"
   }
 }
