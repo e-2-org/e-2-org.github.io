@@ -2,28 +2,14 @@
  * e-2.org colours
  */
 
- /* common patterns */
-#a li a,
-#c li a {
-    text-transform: uppercase;
-    position: relative;
-    display: block;
-    padding: .25em 1.25em;
-    &:after {
-        content:'';
-        display:block;
-        width:.4em;
-        height:.4em;
-        position:absolute;
-        top:.25em;
-    }
-}
-
 
 /* default (grey|white) */
 
 body {
     background: linear-gradient(to right, $grey,$grey 50%,$white 50%,$white);
+    #footer {
+        background: linear-gradient(to right, $grey,$grey 50%,$white 50%,$white);
+    }
     /* right column (on white) */
     div.rightcol {
         color: $darkergrey;
@@ -99,6 +85,9 @@ body {
 
 body.projects {
     background: linear-gradient(to left, $grey,$grey 50%,$white 50%,$white);
+    #footer {
+        background: linear-gradient(to left, $grey,$grey 50%,$white 50%,$white);
+    }
     /* right column (on grey) */
     div.rightcol {
         color: $lightgrey;

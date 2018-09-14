@@ -472,8 +472,10 @@ ul.commissions, ul.projects {
     padding: .35em 0; }
   ul.commissions a span.name, ul.commissions a span.project, ul.projects a span.name, ul.projects a span.project {
     display: inline-block;
-    padding: 0 .35em;
-    white-space: nowrap; }
+    padding: 0 .35em; }
+    @media (min-width: 800px) {
+      ul.commissions a span.name, ul.commissions a span.project, ul.projects a span.name, ul.projects a span.project {
+        white-space: nowrap; } }
 
 body.projects ul.commissions {
   padding: 0 0 0 1em; }
@@ -503,28 +505,14 @@ p.caption {
 /**
  * e-2.org colours
  */
-/* common patterns */
-#a li a,
-#c li a {
-  text-transform: uppercase;
-  position: relative;
-  display: block;
-  padding: .25em 1.25em; }
-  #a li a:after,
-  #c li a:after {
-    content: '';
-    display: block;
-    width: .4em;
-    height: .4em;
-    position: absolute;
-    top: .25em; }
-
 /* default (grey|white) */
 body {
   background: linear-gradient(to right, #999, #999 50%, #fff 50%, #fff);
   /* right column (on white) */
   /* left column (on grey) */
   /* contact|about */ }
+  body #footer {
+    background: linear-gradient(to right, #999, #999 50%, #fff 50%, #fff); }
   body div.rightcol {
     color: #666; }
   body div.rightcol a {
@@ -578,6 +566,8 @@ body.projects {
   /* right column (on grey) */
   /* left column (on white) */
   /* contact|about */ }
+  body.projects #footer {
+    background: linear-gradient(to left, #999, #999 50%, #fff 50%, #fff); }
   body.projects div.rightcol {
     color: #ddd; }
   body.projects div.rightcol a {
@@ -638,12 +628,7 @@ body.projects {
   width: 100%;
   height: 66px; }
 
-#footer-ghost {
-  clear: both;
-  width: 100%;
-  height: 66px; }
-
-/* e-2 logo */
+/* e-2 logo - centred on colour split*/
 #logo {
   position: absolute;
   left: 50%;
@@ -652,33 +637,45 @@ body.projects {
   z-index: 10; }
 
 /* new contact|about (#c #a) links */
-#c,
-#a {
+#a, #c {
   width: 50%;
   position: absolute;
+  box-sizing: border-box;
   top: 20px;
   z-index: 9; }
+  #a ul, #c ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    #a ul li, #c ul li {
+      padding: 0.5em; }
+      #a ul li a, #c ul li a {
+        text-transform: uppercase;
+        position: relative;
+        display: block; }
+        @media (min-width: 460px) {
+          #a ul li a, #c ul li a {
+            padding: 0 1.25em; }
+            #a ul li a:after, #c ul li a:after {
+              content: '';
+              display: block;
+              width: .4em;
+              height: .4em;
+              position: absolute;
+              top: .25em; } }
 
 #c {
   left: 0;
-  text-align: right; }
+  text-align: right;
+  padding-right: 124px; }
+  @media (min-width: 800px) {
+    #c {
+      padding-right: 114px; } }
 
 #a {
   left: 50%;
-  text-align: left; }
-
-#c ul,
-#a ul {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-
-#c ul {
-  margin-right: 124px; }
-
-#a ul {
-  margin-left: 96px; }
-
-#c li,
-#a li {
-  padding: 0.5em; }
+  text-align: left;
+  padding-left: 96px; }
+  @media (min-width: 800px) {
+    #a {
+      padding-left: 86px; } }

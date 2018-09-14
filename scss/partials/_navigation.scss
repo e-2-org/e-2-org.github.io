@@ -19,7 +19,9 @@ ul.commissions, ul.projects {
 			&.name, &.project {
 				display:inline-block;
 				padding:0 .35em;
-				white-space: nowrap;
+				@media (min-width: $break-md) {
+					white-space: nowrap;
+				}
 			}
 		}
 	}
