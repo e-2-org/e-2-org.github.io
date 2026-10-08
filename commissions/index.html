@@ -1,100 +1,23 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>e-2.org | commissions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <script type="text/javascript" src="../js/e-2.js"></script>
-  <link rel="stylesheet" href="../css/e-2.css" type="text/css" media="screen" />
-</head>
-
-<body class="commissions">
-  <!-- first column set -->
-  <div class="column-content">
-    <!-- left content -->
-    <div class="leftcol">
-      <div class="left-column-content">
-        <div class="content">
-          <p>Since being established in 1997, e-2 has developed a series of powerful new works, seeking to develop the potential
-            of the internet and other digital media as significant sites for contemporary art and culture. Artists are invited
-            to explore the conceptual space of the internet, and to create new works which challenge accepted views of art
-            and its contexts.</p>
-          <p>e-2 works closely with artists, from the germ of an idea, through the whole commissioning process, giving both
-            curatorial and technical support and has built up an impressive track record of works - from Janice Kerbel's
-            irreverent and intelligent take on time-share rip-offs, to Tomoko Takahashi's take on word processing systems.
-            Takahashi's Word Perhect formed part of her Turner Prize nomination in 2000 - the first digital work to be recognised
-            by such a prestigious award in the UK.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--right content-->
-  <div class="rightcol">
-    <div class="right-column-content">
-      <h1 class="title"><a href="/">Commissions</a></h1>
+---
+layout: default
+section: commissions
+body_class: commissions
+---
+<div class="column-content">
+  <div class="leftcol">
+    <div class="left-column-content">
       <div class="content">
-          <ul class="commissions">
-              <li><a href="minus20.html" class="minus20"><span class="name">Minus 20</span></a></li>
-              <li><a href="wordperhect.html" class="perhect"><span class="name">Tomoko Takahashi</span><span class="project">Word
-                    Perhect</span></a></li>
-              <li><a href="adelaide.html" class="adelaide"><span class="name">Simon Faithfull</span><span class="project">Adelaide</span></a></li>
-              <li><a href="error404.html" class="error404"><span class="name">Anna Best</span><span class="project">error
-                    404</span></a></li>
-              <li><a href="nowhere.html" class="nowhere"><span class="name">Brighid Lowe</span><span class="project">Now
-                    Here / Nowhere</span></a></li>
-              <li><a href="tome.html" class="tome"><span class="name">David Lilley</span><span class="project">Tome</span></a></li>
-              <li><a href="pigstails.html" class="pigstails"><span class="name">Gill Ord</span><span class="project">Pig's
-                    Tails</span></a></li>
-              <li><a href="ahouse.html" class="ahouse"><span class="name">Geraint Evans</span><span class="project">A
-                    house is not a home</span></a></li>
-              <li><a href="birdisland.html" class="birdisland"><span class="name">Janice Kerbel</span><span class="project">Bird
-                    Island</span></a></li>
-              <li><a href="cruisin.html" class="cruisin"><span class="name">Susan Collins</span><span class="project">Cruisin'</span></a></li>
-              <li><a href="sevenacts.html" class="sevenacts"><span class="name">Oreet Ashery</span><span class="project">7
-                    acts of love</span></a></li>
-            </ul>
-          </div>
-    </div>
-  </div>
-  </div>
-  </div>
-  <!-- end first column set -->
-
-  <!-- footer -->
-  <div id="footer">
-    <div id="footer-content">
-      <!-- logo -->
-      <div id="logo">
-        <a href="/" class="plain">
-          <img src="/images/logos/e2_160.gif" width="160" height="46" alt="e-2.org limited logo" title="click to return to the home page"
-          />
-        </a>
-      </div>
-      <!-- navigation -->
-      <div id="c">
-        <ul>
-          <li><a href="/contact.html">contact</a></li>
-        </ul>
-      </div>
-      <div id="a">
-        <ul>
-          <li><a href="/about/">about</a></li>
-        </ul>
+        <p>Since being established in 1997, e-2 has developed a series of powerful new works, seeking to develop the potential of the internet and other digital media as significant sites for contemporary art and culture. Artists are invited to explore the conceptual space of the internet, and to create new works which challenge accepted views of art and its contexts.</p>
+        <p>e-2 works closely with artists, from the germ of an idea, through the whole commissioning process, giving both curatorial and technical support and has built up an impressive track record of works - from Janice Kerbel's irreverent and intelligent take on time-share rip-offs, to Tomoko Takahashi's take on word processing systems. Takahashi's Word Perhect formed part of her Turner Prize nomination in 2000 - the first digital work to be recognised by such a prestigious award in the UK.</p>
       </div>
     </div>
   </div>
-  <!-- end footer -->
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-15939048-4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-15939048-4');
-  </script>
-</body>
-
-</html>
+</div>
+<div class="rightcol">
+  <div class="right-column-content">
+    <h1 class="title"><a href="{{ '/' | relative_url }}">Commissions</a></h1>
+    <div class="content">
+      {% include list.html collection="commissions" %}
+    </div>
+  </div>
+</div>

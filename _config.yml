@@ -1,0 +1,39 @@
+# e-2.org
+title: e-2.org
+description: >-
+  e-2 works in partnership with artists and arts organisations, to research,
+  advise on, create and support projects for new media, new platforms and new spaces.
+url: https://e-2.org
+baseurl: ""
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name.html
+  commissions:
+    output: true
+    permalink: /commissions/:name.html
+
+defaults:
+  - scope:
+      type: projects
+    values:
+      layout: item
+      section: projects
+      body_class: projects
+  - scope:
+      type: commissions
+    values:
+      layout: item
+      section: commissions
+      body_class: commission
+
+plugins:
+  - jekyll-redirect-from
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

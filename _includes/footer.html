@@ -1,0 +1,19 @@
+<div id="footer">
+  <div id="footer-content">
+    <div id="logo">
+      <a href="{{ '/' | relative_url }}" class="plain">
+        <img src="{{ '/images/logos/e2.svg' | relative_url }}" width="160" height="46" alt="e-2.org limited logo" title="click to return to the home page">
+      </a>
+    </div>
+    <div id="c">
+      <ul>
+        <li><a href="{{ '/contact.html' | relative_url }}"{% if page.url == '/contact.html' %} class="current"{% endif %}>contact</a></li>
+      </ul>
+    </div>
+    <div id="a">
+      <ul>
+        <li><a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} class="current"{% endif %}>about</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

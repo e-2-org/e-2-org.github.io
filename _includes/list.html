@@ -1,0 +1,12 @@
+{%- comment -%}
+  The list of projects or commissions, in order
+  include.collection: projects | commissions
+{%- endcomment -%}
+{%- assign items = site[include.collection] | sort: "order" %}
+<ul class="{{ include.collection }}">
+  {%- for item in items %}
+  <li><a href="{{ item.url | relative_url }}" class="{{ item.list_class }}">
+    {%- for part in item.list %}{% for kv in part %}<span class="{{ kv[0] }}">{{ kv[1] }}</span>{% endfor %}{% endfor -%}
+  </a></li>
+  {%- endfor %}
+</ul>

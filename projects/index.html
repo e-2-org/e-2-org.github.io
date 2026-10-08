@@ -1,97 +1,23 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>e-2.org | projects</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <script type="text/javascript" src="../js/e-2.js"></script>
-  <link rel="stylesheet" href="../css/e-2.css" type="text/css" media="screen" />
-</head>
-
-<body class="projects">
-  <!-- first column set -->
-  <div class="column-content">
-    <!-- left content -->
-    <div class="leftcol">
-      <div class="left-column-content">
-        <h1 class="title"><a href="/">Projects</a></h1>
-        <div class="content">
-            <ul class="projects">
-                <li><a href="wkw.html" class="wkw"><span class="project">Who Knew Whom</span><span class="name">Nat Goodden</span></a></li>
-                <li><a href="ianritchie.html" class="ira"><span class="name">Ian Ritchie Architects</span></a></li>
-                <li><a href="ra.html" class="ra"><span class="name">Royal Academy of Arts</span></a></li>
-                <li><a href="futurefrommemory.html" class="ffm"><span class="project">The Future From Memory</span><span class="name">Emma
-                      Kay</span></a></li>
-                <li><a href="storyofart.html" class="soa"><span class="project">The Story of Art</span><span class="name">Emma
-                      Kay</span></a></li>
-                <li><a href="eyesdown.html" class="eyesdown"><span class="project">Eyes Down</span><span class="name">Anna
-                      Best</span></a></li>
-                <li><a href="contact.html" class="contact"><span class="project">Contact</span><span class="name">Amy Plant</span></a></li>
-                <li><a href="layout.html" class="layout"><span class="project">Layout</span><span class="name">Kathrin B&ouml;hm
-                      &amp; Andreas Lang</span></a></li>
-                <li><a href="shepherdsbush.html" class="sb"><span class="name">Shepherds Bush</span></a></li>
-              </ul>
-            </div>
-      </div>
-    </div>
-  </div>
-  <!--right content-->
-  <div class="rightcol">
-    <div class="right-column-content">
+---
+layout: default
+section: projects
+body_class: projects
+---
+<div class="column-content">
+  <div class="leftcol">
+    <div class="left-column-content">
+      <h1 class="title"><a href="{{ '/' | relative_url }}">Projects</a></h1>
       <div class="content">
-        <p>e-2 is one of the UK's leading digital arts organisations, developing innovative projects within new media, new
-          platforms and new spaces. e-2 works closely with artists and cultural organisations, providing resources in creative
-          consultancy, research, production and commissioning - often in partnership.</p>
-        <p>e-2 takes on challenging and interesting projects ranging from offering advice, research and support to individual
-          artists through the complex process of creating a new work to be made or exhibited using digital technology; undertaking
-          research and feasibility on new projects for the visual arts; large scale organisational consultancy and complete
-          redesign for large, complex websites. e-2 provides complete, advanced technical production and support, from hosting
-          and internet server set-up through to implementation of database functionality, content management systems, data
-          capture and statistics.</p>
+        {% include list.html collection="projects" %}
       </div>
     </div>
   </div>
-  </div>
-  </div>
-  <!-- end first column set -->
-
-
-  <!-- footer -->
-  <div id="footer-ghost">&nbsp;</div>
-  <div id="footer">
-    <div id="footer-content">
-      <!-- logo -->
-      <div id="logo">
-        <a href="/" class="plain">
-          <img src="/images/logos/e2_160.gif" width="160" height="46" alt="e-2.org limited logo" title="click to return to the home page"
-          />
-        </a>
-      </div>
-      <!-- navigation -->
-      <div id="c">
-        <ul>
-          <li><a href="/contact.html">contact</a></li>
-        </ul>
-      </div>
-      <div id="a">
-        <ul>
-          <li><a href="/about/">about</a></li>
-        </ul>
-      </div>
+</div>
+<div class="rightcol">
+  <div class="right-column-content">
+    <div class="content">
+      <p>e-2 is one of the UK's leading digital arts organisations, developing innovative projects within new media, new platforms and new spaces. e-2 works closely with artists and cultural organisations, providing resources in creative consultancy, research, production and commissioning - often in partnership.</p>
+      <p>e-2 takes on challenging and interesting projects ranging from offering advice, research and support to individual artists through the complex process of creating a new work to be made or exhibited using digital technology; undertaking research and feasibility on new projects for the visual arts; large scale organisational consultancy and complete redesign for large, complex websites. e-2 provides complete, advanced technical production and support, from hosting and internet server set-up through to implementation of database functionality, content management systems, data capture and statistics.</p>
     </div>
   </div>
-  <!-- end footer -->
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-15939048-4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-15939048-4');
-  </script>
-</body>
-
-</html>
+</div>

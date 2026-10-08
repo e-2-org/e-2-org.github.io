@@ -1,0 +1,10 @@
+/* colours (the breakpoints, which media queries can't take from variables, are written into the media queries) */
+:root {
+    --grey: #999;
+    --darkergrey: #666;
+    --darkgrey: #222;
+    --lightgrey: #ddd;
+    --white: #fff;
+    --yellow: #ff0;
+    --purple: #c3c;
+}

@@ -1,0 +1,160 @@
+/**
+ * e-2.org colours
+ */
+
+
+/* default (grey|white) */
+
+body {
+    background: linear-gradient(to right, var(--grey),var(--grey) 50%,var(--white) 50%,var(--white));
+    #footer {
+        background: linear-gradient(to right, var(--grey),var(--grey) 50%,var(--white) 50%,var(--white));
+    }
+    /* right column (on white) */
+    div.rightcol {
+        color: var(--darkergrey);
+    }
+    div.rightcol a {
+        color: var(--purple);
+    }
+    div.rightcol a:hover {
+        color: var(--darkergrey);
+    }
+    div.rightcol h1.title {
+        color: var(--purple);
+        border-left: 1.5em solid var(--purple);
+    }
+    div.leftcol h1.title a {
+        color: var(--purple);
+    }
+    div.leftcol h1.title a:hover {
+        color: var(--grey);
+    }
+    div.rightcol h2.subtitle {
+        color: var(--grey);
+    }
+    /* left column (on grey) */
+    div.leftcol {
+        color: var(--lightgrey);
+    }
+    div.leftcol a {
+        color: var(--white);
+    }
+    div.leftcol a:hover {
+        color: var(--yellow);
+    }
+    div.leftcol h1.title {
+        color: var(--yellow);
+        border-right: 1.5em solid var(--yellow);
+    }
+    div.leftcol h1.title a {
+        color: var(--yellow);
+    }
+    div.leftcol h1.title a:hover {
+        color: var(--white);
+    }
+    div.leftcol h2.subtitle {
+        color: var(--white);
+    }
+    /* contact|about */
+    #c li a {
+        color: var(--lightgrey);
+        &:after {
+            border:1px solid var(--yellow);
+            background: var(--white);
+            right:0;
+        }
+        &:hover:after {
+            background:var(--grey);
+        }
+    }
+    #a li a {
+        color: var(--grey);
+        &:after {
+            border:1px solid var(--purple);
+            background: var(--grey);
+            left:0;
+        }
+        &:hover:after {
+            background:var(--white);
+        }
+    }
+}
+
+/* projects (white|grey) */
+
+body.projects {
+    background: linear-gradient(to left, var(--grey),var(--grey) 50%,var(--white) 50%,var(--white));
+    #footer {
+        background: linear-gradient(to left, var(--grey),var(--grey) 50%,var(--white) 50%,var(--white));
+    }
+    /* right column (on grey) */
+    div.rightcol {
+        color: var(--lightgrey);
+    }
+    div.rightcol a {
+        color: var(--yellow);
+    }
+    div.rightcol a:hover {
+        color: var(--white);
+    }
+    div.rightcol h1.title {
+        color: var(--yellow);
+        border-left: 1.5em solid var(--yellow);
+    }
+    div.leftcol h1.title a {
+        color: var(--yellow);
+    }
+    div.leftcol h1.title a:hover {
+        color: var(--white);
+    }
+    div.rightcol h2.subtitle {
+        color: var(--white);
+    }
+    /* left column (on white) */
+    div.leftcol {
+        color: var(--darkergrey);
+    }
+    div.leftcol a {
+        color: var(--purple);
+    }
+    div.leftcol a:hover {
+        color: var(--darkergrey);
+    }
+    div.leftcol h1.title {
+        border-right: 1.5em solid var(--purple);
+        color: var(--purple);
+    }
+    div.leftcol h1.title a {
+        color: var(--purple);
+    }
+    div.leftcol h1.title a:hover {
+        color: var(--darkgrey);
+    }
+    div.leftcol h2.subtitle {
+        color: var(--darkgrey);
+    }
+    /* contact|about */
+    #a li a {
+        color: var(--lightgrey);
+        &:after {
+            border:1px solid var(--yellow);
+            background: var(--grey);
+            left:0;
+        }
+        &:hover:after {
+            background:var(--white);
+        }
+    }
+    #c li a {
+        color: var(--grey);
+        &:after {
+            border:1px solid var(--purple);
+            background: var(--white);
+            right: 0;
+        }
+        &:hover:after {
+            background: var(--grey);
+        }
+    }
+}
