@@ -1,0 +1,49 @@
+---
+layout: default
+section: commissions
+title: word perhect at chisenhale gallery (strip)
+body_class: commission panorama-page
+---
+{%- comment -%}
+  The panorama as a flat strip, to compare with the 360 viewer
+  (perhect-launch-360.html). Drag, scroll or use the arrow keys; it goes
+  round and round, as the room does.
+{%- endcomment -%}
+<div class="panorama-header">
+  <h1 class="title"><a href="{{ '/commissions/wordperhect.html' | relative_url }}">Word Perhect</a></h1>
+  <p>Tomoko Takahashi's installation at Chisenhale Gallery, 2000. Drag to look around.</p>
+</div>
+<div class="panorama strip" id="strip" tabindex="0" role="img" aria-label="Panorama of the Word Perhect installation at Chisenhale Gallery: the hand-drawn word processor on the gallery walls, computers and printers on trestle tables, and tape paths on the floor">
+  <div class="strip-track">
+    <img src="{{ '/images/commissions/perhect-launch-360-strip.jpg' | relative_url }}" width="5000" height="1384" alt="">
+    <img src="{{ '/images/commissions/perhect-launch-360-strip.jpg' | relative_url }}" width="5000" height="1384" alt="">
+  </div>
+</div>
+<script>
+/* two copies side by side: when the view passes the end of one, it jumps back by a copy's width, so it never ends */
+(() => {
+    const strip = document.getElementById('strip');
+    const copy = () => strip.querySelector('img').getBoundingClientRect().width;
+    strip.addEventListener('scroll', () => {
+        const w = copy();
+        if (strip.scrollLeft >= w) strip.scrollLeft -= w;
+        else if (strip.scrollLeft <= 0) strip.scrollLeft += w;
+    });
+    window.addEventListener('load', () => strip.scrollLeft = copy() / 2);
+    let drag = null;
+    strip.addEventListener('pointerdown', e => {
+        drag = { x: e.clientX, left: strip.scrollLeft };
+        strip.setPointerCapture(e.pointerId);
+        strip.classList.add('dragging');
+    });
+    strip.addEventListener('pointermove', e => {
+        if (drag) strip.scrollLeft = drag.left - (e.clientX - drag.x);
+    });
+    const end = () => {
+        drag = null;
+        strip.classList.remove('dragging');
+    };
+    strip.addEventListener('pointerup', end);
+    strip.addEventListener('pointercancel', end);
+})();
+</script>

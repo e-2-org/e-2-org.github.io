@@ -1,31 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>e-2.org | commissions | word perhect</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="text/javascript" src="../js/e-2.js"></script>
-<link rel="stylesheet" href="../css/e-2.css" type="text/css" media="screen" />
-</head>
-<body class="commission">
-<div id="qtpanorama"></div>
-<script type="text/javascript">
-//<![CDATA[
-var myQTObject = new QTObject("../images/commissions/perhect-launch-360.mov", "qtpan", 1000, 700);
-myQTObject.altTxt = "QuickTime panorama of the installation at Chisenhale Gallery";
-myQTObject.addParam("controller", "false");
-myQTObject.write('qtpanorama');
-//]]>
-</script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15939048-4"></script>
+---
+layout: default
+section: commissions
+title: word perhect at chisenhale gallery
+body_class: commission panorama-page
+---
+{%- comment -%}
+  A 360 panorama of the Word Perhect installation at Chisenhale Gallery (2000).
+  It was a QuickTime VR movie (images/commissions/perhect-launch-360.mov, kept
+  as the source). Its 50 tiles were joined into a cylindrical panorama
+  (perhect-launch-360-strip.jpg), then reprojected for Pannellum
+  (perhect-launch-360.jpg): 360 degrees round, 82 degrees top to bottom,
+  as in the QuickTime VR settings.
+{%- endcomment -%}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.7/pannellum.css" integrity="sha512-ZP66YMS+vZxnqqq80JOEltcxGuvWTYRrGXeZk2Rw0Lp/FtnHJ8Stcji6FjKKfa6aII6DkBY1Z4+3w5aqXuv8Tw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.7/pannellum.js" integrity="sha512-zK8emCYiGe3Pq/lowOjAd1NhmfGymEsVWxABVmSbnrtRWOjXXC8tSe/oSxOUjKBy5GIPeopqmPfF4KCyfpTgXg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div class="panorama-header">
+  <h1 class="title"><a href="{{ '/commissions/wordperhect.html' | relative_url }}">Word Perhect</a></h1>
+  <p>Tomoko Takahashi's installation at Chisenhale Gallery, 2000. Drag to look around.</p>
+</div>
+<div class="panorama"><div id="panorama" role="img" aria-label="360 degree panorama of the Word Perhect installation at Chisenhale Gallery: the hand-drawn word processor on the gallery walls, computers and printers on trestle tables, and tape paths on the floor"></div></div>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-15939048-4');
+pannellum.viewer('panorama', {
+    type: 'equirectangular',
+    panorama: '{{ "/images/commissions/perhect-launch-360.jpg" | relative_url }}',
+    haov: 360,
+    vaov: 82.02,
+    autoLoad: true,
+    hfov: 90,
+    minHfov: 30,
+    maxHfov: 110,
+    yaw: 0,
+    pitch: 0,
+    showZoomCtrl: true,
+    showFullscreenCtrl: true
+});
 </script>
-</body>
-</html>

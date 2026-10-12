@@ -1,0 +1,53 @@
+/* the panorama of the Word Perhect installation */
+body.panorama-page {
+    background: var(--darkgrey);
+    color: var(--lightgrey);
+}
+.panorama-header {
+    padding: 1em 1em 0.5em;
+    h1.title {
+        margin: 0 0 0.25em;
+        a {
+            color: var(--yellow);
+            text-decoration: none;
+        }
+    }
+    p {
+        margin: 0;
+    }
+}
+.panorama {
+    width: 100%;
+    height: calc(100vh - 66px - 6em);
+    min-height: 240px;
+    /* Pannellum sizes its viewer to fill this */
+    #panorama {
+        width: 100%;
+        height: 100%;
+    }
+}
+.strip {
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    scrollbar-width: thin;
+    &.dragging {
+        cursor: grabbing;
+        user-select: none;
+    }
+    &:focus-visible {
+        outline: 2px solid var(--yellow);
+        outline-offset: -2px;
+    }
+    .strip-track {
+        display: flex;
+        height: 100%;
+        width: max-content;
+    }
+    img {
+        height: 100%;
+        width: auto;
+        max-width: none;
+        pointer-events: none;
+    }
+}

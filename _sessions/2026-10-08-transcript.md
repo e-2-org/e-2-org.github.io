@@ -1,6 +1,6 @@
 # e-2 and c-ship to Jekyll - session transcript
 
-Transcript of a Claude Code session on 2026-10-08, converting e-2.org and container-ship to Jekyll for GitHub Pages. The same transcript is in both repositories (`e-2` and `c-ship`). Tool calls are shown as one-line notes; their output is omitted. Message times weren't recorded, so only the date is given. Claude's longer replies are shortened where they repeat what the summaries record.
+Transcript of a Claude Code session on 2026-10-08, converting e-2.org and container-ship to Jekyll for GitHub Pages, and a follow-up on 2026-10-12 (the Word Perhect panorama, in the e-2 copy only). The 2026-10-08 part is in both repositories (`e-2` and `c-ship`). Tool calls are shown as one-line notes; their output is omitted. Message times weren't recorded, so only the date is given. Claude's longer replies are shortened where they repeat what the summaries record.
 
 ---
 
@@ -244,3 +244,84 @@ OK that's it for today - please create a summary and transcript like before in t
 > *Write: _sessions/2026-10-08-summary.md (c-ship)*
 
 I've written a summary to each repo's `_sessions` folder, and this transcript to both.
+
+---
+
+# Session of 2026-10-12
+
+## User - 2026-10-12
+
+Is it possible to convert the images/commissions/perhect-launch-360.mov file to a format which can be played in modern browsers?
+
+## Claude
+
+Very likely, yes. A QuickTime VR panorama isn't a video: it's a panoramic picture stored as tiles inside the `.mov`. If the tiles can be decoded, they can be stitched back into one panoramic image and shown with a JavaScript panorama viewer.
+
+> *Bash: Inspect the QuickTime VR file*
+
+ffmpeg can decode the picture tiles: Cinepak, 1384×100 per frame, about 50 tiles. Each frame is a vertical strip of the panorama turned on its side.
+
+> *Bash: Extract the tiles and join them both ways round*
+
+> *Read: both arrangements*
+
+The second arrangement is continuous, but upside down; the drawn interface on the wall ("WRITE SOMETHING RUDE") shows which way round is right.
+
+> *Bash: Turn the panorama upright and crop a detail*
+
+> *Read: the panorama and a detail*
+
+Yes, and the picture recovers completely: a 5000×1384 cylindrical 360° panorama of the installation at Chisenhale Gallery, with no visible seams. I recommend showing it in Pannellum, a small open-source panorama viewer, with the image reprojected so straight lines stay straight (about 1–2MB). The simpler alternative is a flat strip to scroll or drag round. Shall I go ahead with Pannellum?
+
+## User - 2026-10-12
+
+That sounds great - use Panellum to make the interactive 360, but can you also make the strip so I can take a look at it?
+
+## Claude
+
+First I'll look in the file for QuickTime VR's own panorama settings.
+
+> *Bash: Read the QuickTime VR panorama settings*
+
+The settings are there: pan 0–360°, tilt ±41.01°, field of view 12.3–82.0° (starting at 60.7°), starting pan 313.3°. The tilt matches the image's geometry, so the horizon is centred.
+
+> *Bash: Make the equirectangular and strip JPEGs*
+
+The computed vertical angle, 82.02°, matches the file's stored value exactly. The images are 468KB (panorama, 4096×933) and 795KB (strip).
+
+> *Bash: Check the Pannellum version on cdnjs; get integrity hashes and current page links*
+
+> *Bash: Write the two panorama pages, styles and link*
+
+> *Bash: Recreate the screenshot script and capture both pages*
+
+> *Read: screenshots*
+
+The strip works. Pannellum only drew in the top of its box, and the heading link was the browser's default blue.
+
+> *Bash: Check the viewer's canvas and try dragging*
+
+Pannellum's own stylesheet sets its container to `height: 100%`, overriding the page's height, so the viewer shrank to its 240px minimum. It now sits in a sized frame.
+
+> *Bash: Size the viewer frame and colour the heading*
+
+> *Read: the viewer, before and after dragging*
+
+> *Bash: Stage the panorama pages and images*
+
+The panorama now plays in modern browsers, and there's a strip version to compare; both are staged on `jekyll`.
+
+- **Viewer** (`commissions/perhect-launch-360.html`, the same address as before, linked again from the commission page): Pannellum 2.5.7 from cdnjs, with drag, touch, keyboard, zoom and full screen. It opens facing the drawn word processor; the original's saved starting direction couldn't be confirmed.
+- **Strip** (`commissions/perhect-launch-360-strip.html`): the unprojected panorama, looping endlessly. Not linked: keep it, link to it, or delete it.
+
+## User - 2026-10-12
+
+can you add to the summary and transcript in the e-2 repo please?
+
+## Claude
+
+> *Bash: Find where to add the new session*
+
+> *Bash: Add the 12 October session to the summary and transcript*
+
+I've added this session to the summary and transcript in the e-2 repo.
