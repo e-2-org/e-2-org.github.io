@@ -2,7 +2,7 @@
 layout: default
 section: commissions
 title: word perhect at chisenhale gallery
-body_class: commission panorama-page
+body_class: commission panorama
 ---
 {%- comment -%}
   A 360 panorama of the Word Perhect installation at Chisenhale Gallery (2000).
@@ -14,19 +14,28 @@ body_class: commission panorama-page
 {%- endcomment -%}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.7/pannellum.css" integrity="sha512-ZP66YMS+vZxnqqq80JOEltcxGuvWTYRrGXeZk2Rw0Lp/FtnHJ8Stcji6FjKKfa6aII6DkBY1Z4+3w5aqXuv8Tw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.7/pannellum.js" integrity="sha512-zK8emCYiGe3Pq/lowOjAd1NhmfGymEsVWxABVmSbnrtRWOjXXC8tSe/oSxOUjKBy5GIPeopqmPfF4KCyfpTgXg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<div class="panorama-header">
-  <h1 class="title"><a href="{{ '/commissions/wordperhect.html' | relative_url }}">Word Perhect</a></h1>
-  <p>Tomoko Takahashi's installation at Chisenhale Gallery, 2000. Drag to look around.</p>
-</div>
+{% include panorama-header.html %}
+<div class="panorama-frame">
 <div class="panorama"><div id="panorama" role="img" aria-label="360 degree panorama of the Word Perhect installation at Chisenhale Gallery: the hand-drawn word processor on the gallery walls, computers and printers on trestle tables, and tape paths on the floor"></div></div>
+</div>
 <script>
-pannellum.viewer('panorama', {
+/*
+ * The photograph covers 82 degrees top to bottom. Pannellum keeps the edges
+ * of the view inside minPitch and maxPitch, and with avoidShowingBackground
+ * zooms in rather than show beyond them, whatever the shape of the viewer
+ */
+const VAOV = 82.02;
+const viewer = pannellum.viewer('panorama', {
     type: 'equirectangular',
     panorama: '{{ "/images/commissions/perhect-launch-360.jpg" | relative_url }}',
     haov: 360,
-    vaov: 82.02,
+    vaov: VAOV,
+    minPitch: -VAOV / 2,
+    maxPitch: VAOV / 2,
+    avoidShowingBackground: true,
     autoLoad: true,
-    hfov: 90,
+    /* start zoomed out as far as it goes (on tall screens, as far as the photograph allows) */
+    hfov: 110,
     minHfov: 30,
     maxHfov: 110,
     yaw: 0,
@@ -34,4 +43,16 @@ pannellum.viewer('panorama', {
     showZoomCtrl: true,
     showFullscreenCtrl: true
 });
+/*
+ * Pannellum only notices the window changing size, but the viewer's box can
+ * change with the page (the heading above wrapping, for one). Setting the
+ * field of view again fits it to the new shape, within the photograph
+ */
+const fit = () => {
+    viewer.resize();
+    viewer.setHfov(viewer.getHfov(), false);
+};
+new ResizeObserver(fit).observe(document.getElementById('panorama'));
+/* and once the photograph has loaded, as the box may have settled before then */
+viewer.on('load', fit);
 </script>

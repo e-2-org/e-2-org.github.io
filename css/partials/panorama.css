@@ -1,25 +1,34 @@
-/* the panorama of the Word Perhect installation */
-body.panorama-page {
-    background: var(--darkgrey);
-    color: var(--lightgrey);
+/*
+ * The panorama of the Word Perhect installation
+ *
+ * The page keeps the commission pages' split colours and heading
+ * (_includes/panorama-header.html); the panorama fills the rest of the
+ * window, above the footer
+ */
+body.panorama {
+    display: flex;
+    flex-direction: column;
+    /* the window's height, including the room left for the fixed footer */
+    box-sizing: border-box;
+    height: 100vh;
+    padding-bottom: 66px;
 }
-.panorama-header {
-    padding: 1em 1em 0.5em;
-    h1.title {
-        margin: 0 0 0.25em;
-        a {
-            color: var(--yellow);
-            text-decoration: none;
-        }
-    }
-    p {
-        margin: 0;
+.panorama-columns {
+    flex: none;
+    /* contains the floated columns */
+    display: flow-root;
+    margin-bottom: 1em;
+    .column-content {
+        margin-top: 2em;
     }
 }
-.panorama {
-    width: 100%;
-    height: calc(100vh - 66px - 6em);
+.panorama-frame {
+    flex: 1;
     min-height: 240px;
+    .panorama {
+        width: 100%;
+        height: 100%;
+    }
     /* Pannellum sizes its viewer to fill this */
     #panorama {
         width: 100%;
