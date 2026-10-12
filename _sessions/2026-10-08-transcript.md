@@ -325,3 +325,103 @@ can you add to the summary and transcript in the e-2 repo please?
 > *Bash: Add the 12 October session to the summary and transcript*
 
 I've added this session to the summary and transcript in the e-2 repo.
+
+## User - 2026-10-12
+
+in e-2 can the panorama pages retain the split colout page with the title and subtitle aligned as in the other commissions pages
+
+## Claude
+
+> *Bash: Read the split-screen styles and panorama page*
+
+> *Bash: Add the split-screen header to both panorama pages*
+
+> *Bash: Lay out the panorama under the header and screenshot*
+
+> *Read: screenshots beside the error404 commission page*
+
+The heading lines up with the other commission pages. At phone width the 360 view showed black bands above and below the photograph, as a 90° view on a tall screen needs more than the photograph's 82°.
+
+> *Bash: Keep the view within the photograph and recheck (avoidShowingBackground)*
+
+> *Bash: Fit the view to the photograph for the viewer's shape (a calculation of the widest view, updated on resize)*
+
+> *Bash: Stage the panorama page changes*
+
+Both panorama pages now keep the split background and heading (`_includes/panorama-header.html`), with the panorama below, filling the window above the footer; on tall screens the view is narrowed to stay inside the photograph.
+
+## User - 2026-10-12
+
+When I try to interact with the panorama, it goes black
+
+## Claude
+
+> *Bash: Reproduce the black panorama after interacting*
+
+The viewer's field of view was `null` from loading, and after a drag the direction too.
+
+> *Bash: Remove avoidShowingBackground and retest*
+
+> *Bash: Drag hard upwards and check for black edges*
+
+> *Read: screenshots*
+
+Without that option nothing stops the view tilting past the top of the photograph.
+
+> *Bash: Read Pannellum's pitch limiting code*
+
+With `avoidShowingBackground`, Pannellum works out the widest view from `maxPitch − minPitch`, which hadn't been set, so the result was NaN. Setting them to ±41.01° lets Pannellum keep the view inside the photograph itself, replacing the hand-made calculation.
+
+> *Bash: Set pitch limits, restore Pannellum's own fitting, retest*
+
+> *Bash: Redraw after loading and retest at both widths*
+
+> *Bash: Resize the viewer with its box and retest*
+
+## User (sent while Claude was working) - 2026-10-12
+
+I've also placed all the text in the left column, but this yhas caused a vertical scrollbar?
+
+## Claude
+
+> *Read: screenshots (the page itself scrolled when the mouse wheel was used)*
+
+> *Bash: Read your heading change and check box sizing*
+
+The body was the window's height plus 66px of footer padding, as it used content-box sizing; moving the text made it noticeable but wasn't the cause.
+
+> *Bash: Fix body sizing and check the pages fit the window*
+
+> *Bash: Refit the view on resize and retest*
+
+> *Bash: Refit after the photograph loads and retest*
+
+> *Bash: Stage the panorama fixes*
+
+Both problems are fixed. The black screen came from `avoidShowingBackground` without pitch limits; with `minPitch` and `maxPitch` set to ±41.01°, Pannellum keeps the view inside the photograph, and the viewer refits when its box changes size and once the photograph has loaded. The scrollbar came from the body's content-box sizing; it now uses border-box. Both pages fit the window at 1200 and 400px wide, with no black on loading, dragging or zooming.
+
+## User - 2026-10-12
+
+Can th4e pano be zoomed out when loaded?
+
+## Claude
+
+> *Bash: Start the panorama zoomed out and check*
+
+> *Read: screenshots*
+
+> *Bash: Stage the zoomed-out start*
+
+The panorama now opens zoomed out as far as it goes: 110° on desktop, and 75° on a tall phone screen, the widest the photograph fills.
+
+## User - 2026-10-12
+
+Can you update the e-2 _sessions files please?
+
+## Claude
+
+> *Bash: Check the e-2 session files' current state*
+
+> *Bash: Add the panorama page changes to the summary and transcript*
+
+I've added the panorama page changes to the summary and this transcript.
