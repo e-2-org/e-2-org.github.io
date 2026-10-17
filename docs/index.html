@@ -1,0 +1,22 @@
+---
+layout: default
+body_class: projects
+---
+<div class="column-content">
+  <div class="leftcol">
+    <div class="left-column-content">
+      <h1 class="title"><a href="{{ '/projects/' | relative_url }}">Projects</a></h1>
+      <div class="content">
+        {% include list.html collection="projects" %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="rightcol">
+  <div class="right-column-content">
+    <h1 class="title"><a href="{{ '/commissions/' | relative_url }}">Commissions</a></h1>
+    <div class="content">
+      {% include list.html collection="commissions" %}
+    </div>
+  </div>
+</div>

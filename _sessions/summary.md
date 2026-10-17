@@ -1,0 +1,58 @@
+# e-2.org to Jekyll: session summary
+
+8 October 2026, working with Claude Code on the `jekyll` branch, with a follow-up on 12 October (the Word Perhect panorama). The same session also converted container-ship (see the `c-ship` repository). The full conversation is in [transcript.md](transcript.md).
+
+## Aim
+
+Move e-2.org from flat HTML to a Jekyll site on GitHub Pages, as the organisation site. Projects are published from their own repositories in the organisation and appear under its domain (e-2.org/c-ship/, e-2.org/wordperhect/…).
+
+Decisions made:
+
+- Project repos are published as paths under e-2.org, not subdomains.
+- The artworks hosted in c-ship (Tome, A House Is Not A Home, Adelaide…) move to their own repositories, as separate tasks.
+- Parts that rely on dead technology are carried over as they are and noted for later.
+- CSS is plain CSS with native nesting, the modules and partials loaded with `@import`, and no Sass.
+
+## What was done
+
+**Collections.** Each project and commission is a file in `_projects/` or `_commissions/`, converted by script from the original pages so no text was retyped. Front matter holds the heading, subheading, picture (and where it links), supporters' logos, and the order and labels used in the lists; the text is the body. Pages keep their URLs (`/commissions/error404.html`).
+
+**Templates.** `_layouts/default.html` (page and footer), `_layouts/item.html` (a project or commission, reproducing the original column markup so the styles apply unchanged), `_includes/list.html` (the lists, in order) and `_includes/footer.html`. The home, projects, commissions, about and contact pages are rewritten with their original text.
+
+**CSS.** `css/e-2.css` imports `css/modules/` (colours as custom properties, normalize) and `css/partials/` (layout, typography, the lists, the split-screen colours, the footer). Breakpoints are written into the media queries (800px and 1200px, 460px for the footer), as custom properties can't be used there. The unused `_navigation_old` partial was left out.
+
+**Redirects.** GitHub Pages can't use `.htaccess`, so `redirects/` has pages for `/perhect/` (to `/wordperhect/`) and `/projman/` (to p-2.biz) using jekyll-redirect-from. `/c-ship/`, `/minus20/` and `/contact/` will be served by the repositories of those names.
+
+**Removed.** gulp and npm (`gulpfile.js`, `package.json`, `package-lock.json`), `js/e-2.js` (its pop-up function was never called), `.htaccess`, and the Google Analytics tags (Universal Analytics shut down in 2023). Added `CNAME` (e-2.org), `Gemfile` (github-pages) and a README.
+
+**Logo.** `images/logos/e2.svg` replaces `e2_160.gif` in the footer: a pill rebuilt from the GIF's measurements, with the lettering as Nimbus Sans Bold outlines fitted to the GIF's letters. It was then adjusted by hand in Inkscape (slanted hyphen, narrower "r", the dot on the colour split); `e2-inkscape.svg` is the Inkscape source.
+
+**Word Perhect panorama (12 October).** `images/commissions/perhect-launch-360.mov` was a QuickTime VR panorama of the installation at Chisenhale Gallery, which browsers can no longer play. Its 50 Cinepak tiles (each a 1384×100 strip on its side) were decoded with ffmpeg, turned upright and joined into a 5000×1384 cylindrical panorama. The panorama settings stored in the file (pan 0–360°, tilt ±41.01°, field of view 12.3–82.0°) match the image's geometry, so the horizon is centred.
+
+- `commissions/perhect-launch-360.html` (same address as before) shows it in Pannellum 2.5.7 (from cdnjs, with integrity hashes): drag, touch, keyboard, zoom and full screen. The image is reprojected from the cylinder to equirectangular (`perhect-launch-360.jpg`, 4096×933, 468KB; 4096px is the safe texture size for phones), so straight lines stay straight. It opens facing the drawn word processor on the wall; the original's saved starting pan (313.3°) depends on how QuickTime VR measured angles, which couldn't be confirmed.
+- `commissions/perhect-launch-360-strip.html` shows the unprojected panorama as a strip (`perhect-launch-360-strip.jpg`, 5000×1384, 795KB) to drag, scroll or arrow round, looping endlessly. It was made to compare with the viewer and isn't linked.
+- Both use the site's layout with `css/partials/panorama.css`. The Word Perhect commission page links to the viewer again. The `.mov` stays as the source.
+
+**Panorama pages, later on 12 October.**
+
+- **Split screen and heading.** Both pages keep the commission pages' split grey and white background and heading, from `_includes/panorama-header.html` (the same column markup as `_layouts/item.html`): "Tomoko Takahashi" (linking to the commission page), the subtitle "Word Perhect", and the line about the installation, all in the left column. The panorama fills the rest of the window above the footer: the body is a flex column, the window's height (with `box-sizing: border-box`, so the 66px left for the footer doesn't add a scrollbar).
+- **Pannellum settings.** `minPitch` and `maxPitch` are ±41.01° (half the 82.02° the photograph covers) with `avoidShowingBackground`, so Pannellum keeps the edges of the view inside the photograph and narrows the view on tall screens. Without the pitch limits, `avoidShowingBackground` worked out the view from undefined values and the viewer went black on the first interaction. The viewer is refitted (`resize()` and the field of view set again) when its box changes size and once the photograph has loaded, as Pannellum only watches the window. It starts zoomed out as far as it goes: 110° on wide screens, less on tall ones (75° on a 400×700 phone).
+
+## Checks
+
+Every page was screenshotted from the original (`master`) and the Jekyll build and compared pixel by pixel at 1200, 800 and 400px wide. All match except bird island, whose Arts Council logo now sits 16px higher: the original wrapped that one logo in a paragraph, unlike the other pages, and the new page is consistent with the others.
+
+The panorama pages were checked in headless Chrome (with software WebGL) at 1200×700 and 400×700: each page fits the window with no page scroll, and the viewer shows no black on loading, after dragging hard upwards, or after zooming out. Pannellum's own CSS had at first shrunk the viewer to its 240px minimum; it now sits in a sized frame.
+
+## Status
+
+Staged, not committed, on `jekyll`. Run with `bundle exec jekyll serve`.
+
+Open points:
+
+- `e2.svg`: the Inkscape optimisation changed the title's id to `b`, but `aria-labelledby` still says `e2-logo-title`. It doesn't matter while the logo is used as an `<img>`; fix it if the SVG is ever inlined.
+- `e2-inkscape.svg` is untracked: commit it as the source, or ignore it.
+- `e2_160.gif` is no longer used.
+- The launch links on the commission pages still point at the current subdomains (c-ship.e-2.org/projects/…, minus20.e-2.org, wordperhect.e-2.org, contact.e-2.org). Change them to e-2.org/<repo>/ as each artwork gets its repository.
+- `commissions/perhect-launch-360-strip.html` (the panorama as a flat strip) isn't linked from anywhere: keep it, link to it, or delete it.
+- GitHub Pages' default theme adds an unused `assets/css/style.css` to the build.

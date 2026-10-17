@@ -1,0 +1,68 @@
+/* layout */
+
+/* main column wrapper */
+.column-content {
+    margin-top: 2em;
+}
+/* column wrapper */
+
+div.right-column-content,
+div.left-column-content {
+    /*margin:0 30px 0 0;*/
+    position: relative;
+    /*clear:both;*/
+}
+
+/* right column */
+
+div.rightcol {
+    float: left;
+    text-align: left;
+    overflow: hidden;
+    width: 40%;
+}
+
+div.rightcol h1.title,
+div.rightcol h2.subtitle {
+    padding-left: .5em;
+    margin-bottom: 0.5em;
+}
+
+/* left column */
+
+div.leftcol {
+    float: left;
+    text-align: right;
+    overflow: hidden;
+    width: 50%;
+}
+
+div.leftcol h1.title,
+div.leftcol h2.subtitle {
+    padding-right: .5em;
+    margin-bottom: 0.5em;
+}
+
+/* column content */
+
+.content {
+    padding: 1em;
+}
+
+
+.left-column-content,
+.right-column-content {}
+
+.left-column-content {
+    margin-left: 10%;
+}
+
+.right-column-content {
+    margin-right: 10%;
+}
+
+ul.projects {
+    list-style:none;
+    padding:0;
+    margin:0;
+}

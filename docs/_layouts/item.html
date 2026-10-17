@@ -1,0 +1,37 @@
+---
+layout: default
+---
+{%- comment -%}
+  A project or commission: heading and text on the left, picture (linking
+  to the work, if it is online) and supporters' logos on the right
+{%- endcomment -%}
+<div class="column-content">
+  <div class="leftcol">
+    <div class="left-column-content">
+      <h1 class="title"><a href="{{ page.heading_url | default: '/' | relative_url }}">{{ page.heading }}</a></h1>
+      <div class="content">
+        {%- if page.subheading %}
+        <h2 class="subtitle">{{ page.subheading }}</h2>
+        {%- endif %}
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="rightcol">
+  <div class="right-column-content">
+    {%- if page.image %}
+    {%- assign image = page.image %}
+    {% if image.link %}<a href="{{ image.link }}"{% if image.title %} title="{{ image.title | escape }}"{% endif %} target="_blank">{% endif -%}
+    <img src="{{ image.src | relative_url }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.alt | escape }}"{% if image.title %} title="{{ image.title | escape }}"{% endif %}>
+    {%- if image.link %}</a>{% endif %}
+    {%- endif %}
+    {%- if page.logos %}
+    <div class="content">
+      {%- for logo in page.logos %}
+      {% if logo.link %}<a href="{{ logo.link }}">{% endif %}<img src="{{ logo.src | relative_url }}" width="{{ logo.width }}" height="{{ logo.height }}" alt="{{ logo.alt | escape }}">{% if logo.link %}</a>{% endif %}
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </div>
+</div>

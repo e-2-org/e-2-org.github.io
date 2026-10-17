@@ -1,0 +1,62 @@
+/*
+ * The panorama of the Word Perhect installation
+ *
+ * The page keeps the commission pages' split colours and heading
+ * (_includes/panorama-header.html); the panorama fills the rest of the
+ * window, above the footer
+ */
+body.panorama {
+    display: flex;
+    flex-direction: column;
+    /* the window's height, including the room left for the fixed footer */
+    box-sizing: border-box;
+    height: 100vh;
+    padding-bottom: 66px;
+}
+.panorama-columns {
+    flex: none;
+    /* contains the floated columns */
+    display: flow-root;
+    margin-bottom: 1em;
+    .column-content {
+        margin-top: 2em;
+    }
+}
+.panorama-frame {
+    flex: 1;
+    min-height: 240px;
+    .panorama {
+        width: 100%;
+        height: 100%;
+    }
+    /* Pannellum sizes its viewer to fill this */
+    #panorama {
+        width: 100%;
+        height: 100%;
+    }
+}
+.strip {
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    scrollbar-width: thin;
+    &.dragging {
+        cursor: grabbing;
+        user-select: none;
+    }
+    &:focus-visible {
+        outline: 2px solid var(--yellow);
+        outline-offset: -2px;
+    }
+    .strip-track {
+        display: flex;
+        height: 100%;
+        width: max-content;
+    }
+    img {
+        height: 100%;
+        width: auto;
+        max-width: none;
+        pointer-events: none;
+    }
+}
