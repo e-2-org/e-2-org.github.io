@@ -1,6 +1,6 @@
 # e-2.org to Jekyll: session summary
 
-8 October 2026, working with Claude Code on the `jekyll` branch, with a follow-up on 12 October (the Word Perhect panorama). The same session also converted container-ship (see the `c-ship` repository). The full conversation is in [2026-10-08-transcript.md](2026-10-08-transcript.md).
+8 October 2026, working with Claude Code on the `jekyll` branch, with a follow-up on 12 October (the Word Perhect panorama). The same session also converted container-ship (see the `c-ship` repository). The full conversation is in [transcript.md](transcript.md).
 
 ## Aim
 
