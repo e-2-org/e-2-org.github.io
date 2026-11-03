@@ -1,17 +1,20 @@
-/* notes on how a project was made (_layouts/notes.html) */
+/* notes on how a project was made (_layouts/notes.html), in the commission colours (grey|white) */
 
-/* room to scroll the end of the notes clear of the fixed footer (66px) */
-.notes-text,
-.notes-facts {
-    margin-bottom: 80px;
+body.notes div.rightcol {
+    width: 50%;
 }
 
 .notes-text {
-    text-align: left;
-    margin-left: 1em;
+    padding-top: 2.5em;
+    /* room to scroll the end of the notes clear of the fixed footer (66px) */
+    margin-bottom: 80px;
     line-height: 1.5;
     h3 {
         margin: 1.75em 0 .5em;
+        color: var(--darkgrey);
+        &:first-child {
+            margin-top: 0;
+        }
     }
     p,
     ul {
@@ -26,23 +29,13 @@
     code {
         font-size: .95em;
     }
-}
-
-.notes-facts {
-    padding-top: 2.5em;
-    line-height: 1.4;
-    h3 {
-        margin: 0 0 .5em;
-        color: var(--white);
-        &:not(:first-child) {
-            margin-top: 2em;
-        }
-    }
+    /* the figures, after the account */
     dl {
         margin: 0;
     }
     dt {
         font-weight: bold;
+        color: var(--darkgrey);
     }
     dd {
         margin: 0 0 .75em;
