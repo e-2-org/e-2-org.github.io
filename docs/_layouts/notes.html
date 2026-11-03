@@ -13,9 +13,14 @@ layout: default
           - [Running time, 9h 30m 14s]
 {%- endcomment -%}
 <div class="column-content">
+  <div class="leftcol">
+    <h1 class="title switch"><a href="{{ page.heading_url | relative_url }}">{{ page.heading }}</a></h1>
+    <div class="content">
+      <div class="left-column-content"></div>
+    </div>
+  </div>
   <div class="rightcol">
     <div class="right-column-content">
-      <h1 class="title"><a href="{{ page.heading_url | relative_url }}">{{ page.heading }}</a></h1>
       <div class="content notes-text">
         <h2 class="subtitle">{{ page.subheading }}</h2>
         {{ content }}

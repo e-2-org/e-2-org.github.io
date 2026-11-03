@@ -54,15 +54,207 @@ div.leftcol h2.subtitle {
 .right-column-content {}
 
 .left-column-content {
-    margin-left: 10%;
+   padding-left: 10%;
 }
 
 .right-column-content {
-    margin-right: 10%;
+    padding-right: 10%;
 }
 
 ul.projects {
     list-style:none;
     padding:0;
     margin:0;
+}
+
+.notes .right-column-content {
+    max-height: 85vh;
+    overflow-y: auto;
+}
+/* split screen layouts */
+
+/* default (grey|white) */
+
+body {
+    background: linear-gradient(to right, var(--grey),var(--grey) 50%,var(--white) 50%,var(--white));
+    #footer {
+        background: linear-gradient(to right, var(--grey),var(--grey) 50%,var(--white) 50%,var(--white));
+    }
+    /* right column (on white) */
+    div.rightcol {
+        color: var(--darkergrey);
+        a {
+            color: var(--purple);
+            &:hover {
+                color: var(--darkergrey);
+            }
+        }
+        h1.title {
+            color: var(--purple);
+            border-left: 1.5em solid var(--purple);
+            a {
+                color: var(--purple);
+                &:hover {
+                    color: var(--grey);
+                }
+            }
+        }
+        h2.subtitle {
+            color: var(--darkgrey);
+        }
+    }
+    /* left column (on grey) */
+    div.leftcol {
+        color: var(--lightgrey);
+        a {
+            color: var(--white);
+        }
+        a:hover {
+            color: var(--yellow);
+        }
+        h1.title {
+            color: var(--yellow);
+            border-right: 1.5em solid var(--yellow);
+            a {
+                color: var(--yellow);
+                &:hover {
+                    color: var(--white);
+                }
+            }
+            &.switch {
+                color: var(--purple);
+                border-right: 1.5em solid var(--purple);
+                a {
+                    color: var(--purple);
+                    &:hover {
+                        color: var(--darkgrey);
+                    }
+                }
+            }
+        }
+        h2.subtitle {
+            color: var(--white);
+        }
+        ul {
+            list-style-type: none;
+            text-align: right;
+            li::after {
+                content: " \2022";
+            }
+            &.projects li::after {
+                content: "";
+            }
+        }
+    }
+    /* contact|about */
+    #c li a {
+        color: var(--white);
+        &:after {
+            border:1px solid var(--yellow);
+            background: var(--white);
+            right:0;
+        }
+        &:hover:after {
+            background:var(--grey);
+        }
+    }
+    #a li a {
+        color: var(--darkgrey);
+        &:after {
+            border:1px solid var(--purple);
+            background: var(--grey);
+            left:0;
+        }
+        &:hover:after {
+            background:var(--white);
+        }
+    }
+}
+
+/* projects (white|grey) */
+
+body.projects {
+    background: linear-gradient(to left, var(--grey),var(--grey) 50%,var(--white) 50%,var(--white));
+    #footer {
+        background: linear-gradient(to left, var(--grey),var(--grey) 50%,var(--white) 50%,var(--white));
+    }
+    /* right column (on grey) */
+    div.rightcol {
+        color: var(--white);
+        a {
+            color: var(--yellow);
+            &:hover {
+                color: var(--white);
+            }
+        }
+        h1.title {
+            color: var(--yellow);
+            border-left: 1.5em solid var(--yellow);
+            a {
+                color: var(--yellow);
+                &:hover {
+                    color: var(--white);
+                }
+            }       
+        }
+        h2.subtitle {
+            color: var(--white);
+        }
+    }
+    /* left column (on white) */
+    div.leftcol {
+        color: var(--darkergrey);
+        a {
+            color: var(--purple);
+            &:hover {
+                color: var(--darkergrey);
+            }
+        }
+        h1.title {
+            color: var(--purple);
+            border-right: 1.5em solid var(--purple);
+            a {
+                color: var(--purple);
+                &:hover {
+                    color: var(--darkgrey);
+                }
+            }
+        }
+        h2.subtitle {
+            color: var(--darkgrey);
+        }
+        ul {
+            list-style-type: none;
+            text-align: right;
+            li::after {
+                content: " \2022";
+            }
+            &.projects li::after {
+                content: "";
+            }
+        }
+    }
+    /* contact|about */
+    #a li a {
+        color: var(--white);
+        &:after {
+            border:1px solid var(--yellow);
+            background: var(--grey);
+            left:0;
+        }
+        &:hover:after {
+            background:var(--white);
+        }
+    }
+    #c li a {
+        color: var(--darkergrey);
+        &:after {
+            border:1px solid var(--purple);
+            background: var(--white);
+            right: 0;
+        }
+        &:hover:after {
+            background: var(--grey);
+        }
+    }
 }
