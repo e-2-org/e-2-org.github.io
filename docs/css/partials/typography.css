@@ -63,7 +63,7 @@ body.notes .column-content {
     padding-top: 2em;
 }
 
-/* the only column: on white, half the page */
+/* the heading on grey on the left, the notes on white on the right: half the page each */
 body.notes div.rightcol {
     width: 50%;
     margin-left: 50%;
@@ -72,6 +72,27 @@ body.notes div.rightcol {
     h2.subtitle {
         margin-top: 0;
         padding-left: 0;
+    }
+}
+
+/* below break-md the grey narrows to a quarter, leaving the notes most of the width */
+@media (max-width: 799.98px) {
+    body.notes {
+        background: linear-gradient(to right, var(--grey), var(--grey) 25%, var(--white) 25%, var(--white));
+        #footer {
+            background: linear-gradient(to right, var(--grey), var(--grey) 25%, var(--white) 25%, var(--white));
+        }
+        /* the contact link is now on white */
+        #c li a {
+            color: var(--darkgrey);
+        }
+        div.leftcol {
+            width: 25%;
+        }
+        div.rightcol {
+            width: 75%;
+            margin-left: 25%;
+        }
     }
 }
 
