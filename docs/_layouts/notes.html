@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{%- comment -%}
+  Notes on how a project was made and re-made, laid out as the project
+  pages (_layouts/item.html): the account on the left, set left-aligned
+  for reading at length, and the figures on the right, from page.facts:
+
+    facts:
+      - heading: The piece
+        items:
+          - [Running time, 9h 30m 14s]
+{%- endcomment -%}
+<div class="column-content">
+  <div class="leftcol">
+    <div class="left-column-content">
+      <h1 class="title"><a href="{{ page.heading_url | relative_url }}">{{ page.heading }}</a></h1>
+      <div class="content">
+        <h2 class="subtitle">{{ page.subheading }}</h2>
+        <div class="notes-text">
+        {{ content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="rightcol">
+  <div class="right-column-content">
+    <div class="content notes-facts">
+      {%- for group in page.facts %}
+      <h3>{{ group.heading }}</h3>
+      <dl>
+        {%- for item in group.items %}
+        <dt>{{ item[0] }}</dt>
+        <dd>{{ item[1] }}</dd>
+        {%- endfor %}
+      </dl>
+      {%- endfor %}
+    </div>
+  </div>
+</div>

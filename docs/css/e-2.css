@@ -4,8 +4,8 @@
  * Plain CSS, using nesting. The modules and partials are loaded in order:
  *  - modules: colours (as custom properties) and normalize
  *  - partials: layout, type, the project and commission lists, the split
- *    screen colours for each section, the footer, and the panorama of the
- *    Word Perhect installation
+ *    screen colours for each section, the footer, the panorama of the
+ *    Word Perhect installation, the video overlay, and the notes pages
  */
 @import url("modules/variables.css");
 @import url("modules/normalize.css");
@@ -16,3 +16,5 @@
 @import url("partials/splitscreen.css");
 @import url("partials/footer.css");
 @import url("partials/panorama.css");
+@import url("partials/overlay.css");
+@import url("partials/notes.css");

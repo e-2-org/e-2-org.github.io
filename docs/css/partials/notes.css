@@ -1,0 +1,50 @@
+/* notes on how a project was made (_layouts/notes.html) */
+
+/* room to scroll the end of the notes clear of the fixed footer (66px) */
+.notes-text,
+.notes-facts {
+    margin-bottom: 80px;
+}
+
+.notes-text {
+    text-align: left;
+    margin-left: 1em;
+    line-height: 1.5;
+    h3 {
+        margin: 1.75em 0 .5em;
+    }
+    p,
+    ul {
+        margin: 0 0 1em;
+    }
+    ul {
+        padding-left: 1.25em;
+    }
+    li {
+        margin-bottom: .35em;
+    }
+    code {
+        font-size: .95em;
+    }
+}
+
+.notes-facts {
+    padding-top: 2.5em;
+    line-height: 1.4;
+    h3 {
+        margin: 0 0 .5em;
+        color: var(--white);
+        &:not(:first-child) {
+            margin-top: 2em;
+        }
+    }
+    dl {
+        margin: 0;
+    }
+    dt {
+        font-weight: bold;
+    }
+    dd {
+        margin: 0 0 .75em;
+    }
+}
