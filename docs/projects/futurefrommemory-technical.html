@@ -1,0 +1,57 @@
+---
+layout: notes
+section: projects
+body_class: projects
+title: "The Future from Memory: how it was made"
+heading: "The Future from Memory"
+heading_url: /projects/futurefrommemory.html
+subheading: "How it was made, and re-made"
+description: "How e-2 made Emma Kay's The Future from Memory in Flash, and how it was rendered to video from the original files in 2026."
+facts:
+  - heading: The piece
+    items:
+      - [Running time, "43 minutes 10 seconds, looped"]
+      - [Text, "269 paragraphs under 30 headings"]
+      - [Segments, "5, from 7 minutes 24 seconds to 9 minutes 42 seconds long"]
+      - [Each paragraph, "animated over 14 to 16.6 seconds, most over 16, and on screen for about 13"]
+      - [Each heading, "4.4 to 9.7 seconds"]
+  - heading: The original
+    items:
+      - [Format, "Macromedia Flash MX movies (SWF version 6), 800 &times; 600, 25 frames a second"]
+      - [Files, "5 SWF files, 6.6 MB; each loaded the next, and the last loaded the first"]
+      - [Text, "converted to vector outlines, so no fonts were needed to play it"]
+      - [Playback, "full-screen with the mouse pointer hidden, from projector programs for Mac OS and Windows, or in Flash Player 6"]
+      - [Distributed, "on CD, February 2003, with the source files and Flash Player 6 installers for Windows, Mac OS, Mac OS X and Linux"]
+      - [Requirements, "85 MB of disk space, &ldquo;fast processor, graphics card and plenty of RAM&rdquo;"]
+  - heading: The videos
+    items:
+      - [Picture, "1440 &times; 1080 (4:3, as the original), or 1440 &times; 810 (16:9)"]
+      - [Frame rate, "25 frames a second, as the original"]
+      - [Frames, "64,753"]
+      - [Video, "H.264 (x264, preset slow, CRF 16, tuned for animation)"]
+      - [Full piece, "1.08 GB, 3.3 Mbit/s on average"]
+      - [Rendered, "6 October 2026, in 10 minutes 29 seconds: 103 frames a second, at 1.8 times the original size"]
+      - [Rendered with, "Ruffle&rsquo;s frame exporter and ffmpeg 7.1.5, on an AMD Ryzen 5 5500"]
+---
+<p>The Future from Memory was commissioned by Chisenhale Gallery for its large space in East London. Emma Kay&rsquo;s work reconstructs epic histories, geographies and fictions entirely from memory; this piece turns the method forwards, into a history of the world still to come, from the twenty-first century to the thirty-second and beyond. e-2 produced it with her as a digitally animated text projection.</p>
+
+<h3>How the original was made</h3>
+<ul>
+  <li><strong>The text was animated in Macromedia Flash</strong>, with Swift 3D, a program that renders 3D scenes as Flash vector shapes. Every paragraph and heading was converted to outlines, so the piece needed no fonts and stayed sharp at any size.</li>
+  <li><strong>It was made in five segments</strong>, 800 &times; 600 at 25 frames a second. Each segment loaded the next when it finished, and the last loaded the first, so the piece looped.</li>
+  <li><strong>It was distributed on CD</strong> in February 2003, to run full-screen with the mouse pointer hidden, from projector programs for Mac OS and Windows. The CD also held the source files and the Flash Player 6 installers.</li>
+</ul>
+<p>Working this way had a cost. Changing a few words meant rendering them again as 3D vector shapes, importing them into Flash and fitting them into the right frames. That experience is why e-2 made Emma Kay&rsquo;s next piece with the company, <a href="{{ '/projects/storyofart.html' | relative_url }}">The Story of Art</a>, in SVG, where the whole piece could be generated again from the text in a single step.</p>
+
+<h3>Why it stopped working</h3>
+<p>Adobe ended Flash Player at the end of 2020, and browsers removed it. The projector programs on the CD were built for the Mac and Windows systems of 2003. Without them, nothing could play the files.</p>
+
+<h3>Re-made as video</h3>
+<p>In 2026 the piece was rendered to video from the five Flash files on the original CD, without changing them.</p>
+<ul>
+  <li><strong>Playing the files.</strong> Ruffle is an open-source emulator of Flash Player. Its frame exporter plays a Flash file and saves every frame as an image, at whatever size is asked for, as fast as the computer allows. Each segment was rendered at 1.8 times its original size, 1440 &times; 1080, at 103 frames a second: the whole piece in about ten and a half minutes.</li>
+  <li><strong>Joining the segments.</strong> Each segment was rendered up to the frame where the original handed over to the next one, so the segments join where they did in the gallery, and play as one piece of 64,753 frames.</li>
+  <li><strong>Encoding.</strong> The frames were encoded as H.264 video at the original 25 frames a second, at a high quality setting tuned for animation, and the five segments joined without encoding them again.</li>
+  <li><strong>Widescreen.</strong> The original is 4:3. For screens and projectors that are 16:9, the widescreen version removes the top quarter of the picture. Before it was removed, every one of the 64,753 frames was checked for any mark in that band; it is blank throughout, so no text is lost.</li>
+</ul>
+<p>The <a href="https://e-2-org.github.io/futurefrommemory/" target="_blank">segment-by-segment page</a> has the full piece and each segment in both shapes, and the original Flash files are in the <a href="https://github.com/e-2-org/futurefrommemory" target="_blank">futurefrommemory repository</a> on GitHub.</p>
